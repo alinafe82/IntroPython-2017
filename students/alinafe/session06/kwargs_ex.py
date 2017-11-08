@@ -120,3 +120,12 @@ def test_fun3_multi():
 
     assert result[0] == (3,4,4,5,6,7)
     assert result[1] == ({'this': 45})
+
+def test_fun3_multi_ssrt():
+    t=(4,5,6,7)
+    d = {'this':24,
+         'that':35}
+    result = kwargs_ex.fun2(6,*t,7,**d, other=80)
+
+    assert result[0] == (6,4,5,6,7,7)
+    assert result[1] == ({'other':80,'this':24,'that':35})
