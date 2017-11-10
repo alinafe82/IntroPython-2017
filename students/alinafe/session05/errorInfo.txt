@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/Users/alinafe.matenda/Desktop/GoogleDrive/Google Drive/Documents/repository/IntroPython-2017/students/alinafe/session05/writeErrorToFile.py", line 4, in <module>
+    raise Exception('This is an error!!!')
+Exception: This is an error!!!
