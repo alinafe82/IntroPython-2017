@@ -12,7 +12,7 @@ class Element:
         self.content.append(content)
 
     def render(self, file_obj):
-        all_content = ('<' + self.tag + '>')
+        all_content = ['<', + self.tag + '>']
         for each in self.content:
             try:
                 all_content += each

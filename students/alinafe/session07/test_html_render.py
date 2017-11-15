@@ -3,14 +3,13 @@ from html_render import Element, Body, Para, HTML
 
 
 def test_new_element():
-    el_object = Element('content')  # capital E as it is a class
-    el_object2 = Element()  # capital E as it is a class
+    el_object = Element()  # capital E as it is a class
+    el_object2 = Element('content')  # capital E as it is a class
 
 
 # test functionality
-def test_add_element():
+def test_add_content():
     el_object = Element('content')  # capital E as it is a class
-    print(el_object.content)
     el_object = Element()
     assert el_object.content == []
     # assert False
@@ -27,7 +26,7 @@ def test_append_string():
     assert el_object.content == ['spam, spam, spam', ', wonderful spam']
 
 
-def test_tag_element():
+def test_tag_exists():
     assert Element.tag == 'html'
     el_object = Element('spam, spam, spam')
     assert el_object.tag == 'html'
