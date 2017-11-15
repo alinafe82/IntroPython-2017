@@ -4,6 +4,7 @@ class Element:
     indent = '  '
 
     def __init__(self, content=None):
+        #import pdb; pdb.set_trace()
         if content is None:
             self.content = []
         else:
@@ -13,7 +14,28 @@ class Element:
         self.content.append(content)
 
     def render(self, file_obj):
-        file_obj.write('<' + self.tag + '>')
+
+        all_content = '<' + self.tag + '>'
         for each in self.content:
-            file_obj.write(each)
-        file_obj.write('</' + self.tag + '>')
+            try:
+                all_content += each
+            except TypeError:
+                each.render(each, file_obj)
+            all_content = '<' + self.tag + '>'
+
+        self.write_to_file(file_obj, all_content)
+
+    def write_to_file(self, file_obj, stuff_to_print):
+        file_obj.write(stuff_to_print)
+
+
+class Body(Element):
+    tag = 'body'
+
+
+class Para(Element):
+    tag = 'p'
+
+
+class HTML(Element):
+    tag = 'html'
