@@ -4,14 +4,13 @@ from flask import render_template
 from flask import request
 
 from flask_sqlalchemy import SQLAlchemy
-
+from sqlalchemy import create_engine
 
 
 #initialize flask application
 app = Flask(__name__)
-app.config.from_object(os.environ['APP_SETTINGS'])
-print(os.environ['APP_SETTINGS'])
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+engine = create_engine('postgresql://postgres:postgres@localhost:5432/mailroom')
 db = SQLAlchemy(app)
 
 
