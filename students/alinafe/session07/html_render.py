@@ -34,8 +34,8 @@ class Element():
 
 class OneLineTag(Element):
     def render(self, file_obj, cur_ind=""):
-        # there is some repition here -- maybe factor that out?
-        file_obj.write('{}<{}> '.format(cur_ind, self.tag))
+        # there is some repetition here -- maybe factor that out?
+        file_obj.write('{}<{}>'.format(cur_ind, self.tag))
         for each in self.content:
             # OneLineTags should only have strings...
             file_obj.write(each)
