@@ -80,7 +80,7 @@ class Donor():
         self.donations.append(amount)
 
 
-class DonorDB():
+class DonorDB:
     """
     encapsulation of the entire database of donors and data associated with them.
     """
@@ -116,9 +116,9 @@ class DonorDB():
     def challenge(self, factor):
         donors = self.donors
         new_donors = map(lambda d: mult_donor(d, factor), donors)
-        new_db = DonorDB(self.donors)
+        new_db = DonorDB(new_donors)
 
-        return new_db#, new_donors
+        return new_db
 
     def list_donors(self):
         """
@@ -199,6 +199,8 @@ class DonorDB():
         # sort the report data
         report_rows.sort(key=self.sort_key)
         report = []
+        # report = ["{:25s} | {:11s} | {:9s} | {:12s}".format("Donor Name", "Total Given", "Num Gifts", "Average Gift"),
+        #  "-" * 66]
         report.append("{:25s} | {:11s} | {:9s} | {:12s}".format("Donor Name",
                                                                 "Total Given",
                                                                 "Num Gifts",

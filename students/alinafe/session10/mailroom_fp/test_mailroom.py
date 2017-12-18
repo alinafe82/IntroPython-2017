@@ -174,6 +174,7 @@ def test_challenge():
     # assert nd[0].donations == list(map(lambda x: x*3, sd[0].donations))
     assert nd.donations == [x * 3 for x in sd[0].donations]
 
+
 def test_mult_donor():
     donor = mailroom.Donor("fred", [3, 7, 2, 4])
     new_donor = mailroom.mult_donor(donor, 3)
