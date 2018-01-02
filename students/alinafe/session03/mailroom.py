@@ -43,7 +43,6 @@ Paul Allen                 $     708.42           3  $      236.14
 """
 
 
-donors = { {'Stephen King': 'Mtisunge Kazembe': 'Stewart Convington': 'Macmillan Chigaru':}
 
 
 def inputName(message):
