@@ -1,0 +1,5 @@
+{
+  "pytest_ex.py::TestClass::()::test_two": true,
+  "pytest_ex.py::test_answer": true,
+  "pytest_ex.py::test_needsfiles": true
+}
